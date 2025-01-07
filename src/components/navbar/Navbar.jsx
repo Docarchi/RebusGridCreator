@@ -4,9 +4,9 @@ import myicon from '/32.svg'
 export function Navbar() {
     return <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="/RebusGridCreator/Home/">
+        <Link className="navbar-item" to="/RebusGridCreator/Home/">
         <img src={myicon} width="80" height="160"/>
-        </a>
+        </Link>
     
         <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
