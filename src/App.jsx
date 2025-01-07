@@ -1,7 +1,10 @@
+import { Navbar } from "./components/navbar/Navbar"
+import {MyRouter} from "./components/router/Router"
+
 function App() {
   return <div>
-    <label htmlFor="input">Nom : </label>
-    <input id="input" type="text" className="input" placeholder="Entrer votre nom..."/>
+    <Navbar/>
+    <MyRouter/>
   </div>
 }
 
