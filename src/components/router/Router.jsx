@@ -6,7 +6,8 @@ import {HomePage} from '../homepage/home';
 export const MyRouter = () => {
   return (
     <Routes> {/* The Switch decides which component to show based on the current URL.*/}
-      <Route exact path='/RebusGridCreator/Home/' element={<HomePage/>}></Route>
+        <Route exact path='/RebusGridCreator/' element={<HomePage/>}/>
+        <Route exact path='/RebusGridCreator/Home/' element={<HomePage/>}/>
       {/*<Route exact path='/gridcreation' component={GridCreator}></Route>*/}
     </Routes>
   );
