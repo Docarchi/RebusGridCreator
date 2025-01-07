@@ -17,7 +17,7 @@ export function Navbar() {
     
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-start">
-          <Link className="navbar-item" to="/RebusGridCreator/RebusGridCreator/">
+          <Link className="navbar-item" to='/RebusGridCreator/GridCreation/'>
             Création de grilles
           </Link>
     

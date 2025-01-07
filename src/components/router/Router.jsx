@@ -1,14 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
 
 import {HomePage} from '../homepage/home';
-{/*import GridCreator from '../pages/GridCreator';*/}
+import {GridCreation} from '../gridcreation/gridcreation';
 
 export const MyRouter = () => {
   return (
-    <Routes> {/* The Switch decides which component to show based on the current URL.*/}
-        <Route exact path='/RebusGridCreator/' element={<HomePage/>}/>
-        <Route exact path='/RebusGridCreator/Home/' element={<HomePage/>}/>
-      {/*<Route exact path='/gridcreation' component={GridCreator}></Route>*/}
+    <Routes> 
+        <Route path='/RebusGridCreator/' element={<HomePage/>}/>
+        <Route path='/RebusGridCreator/Home/' element={<HomePage/>}/>
+        <Route path='/RebusGridCreator/GridCreation/' element={<GridCreation/>}/>
     </Routes>
   );
 }
