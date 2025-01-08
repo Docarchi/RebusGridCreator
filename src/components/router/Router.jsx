@@ -6,9 +6,9 @@ import {GridCreation} from '../gridcreation/gridcreation';
 export const MyRouter = () => {
   return (
     <Routes> 
-        <Route path='/RebusGridCreator/' element={<HomePage/>}/>
-        <Route path='/RebusGridCreator/Home/' element={<HomePage/>}/>
-        <Route path='/RebusGridCreator/GridCreation/' element={<GridCreation/>}/>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/Home/' element={<HomePage/>}/>
+        <Route path='/GridCreation/' element={<GridCreation/>}/>
     </Routes>
   );
 }
