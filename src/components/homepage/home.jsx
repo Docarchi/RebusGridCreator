@@ -1,4 +1,3 @@
-import myimage from '/176.png'
 import { Link } from 'react-router-dom'
 import { RandomRebus } from './random-rebus'
 
