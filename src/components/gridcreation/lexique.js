@@ -40,6 +40,46 @@ export const lexique = [
         mots:["ange", "aile", "vole"]
     },
     {
+        id:12,
+        mots:["anneau", "bague", "rubis"]
+    },
+    {
+        id:13,
+        mots:["arc", "ciel"]
+    },
+    {
+        id:14,
+        mots:["art"]
+    },
+    {
+        id:15,
+        mots:["as", "carte", "pique"]
+    },
+    {
+        id:16,
+        mots:["auto", "le Mans"]
+    },
+    {
+        id:17,
+        mots:["baie", "fraise", "mûre", "cassis"]
+    },
+    {
+        id:18,
+        mots:["bain", "mousse"]
+    },
+    {
+        id:19,
+        mots:["balle", "batte"]
+    },
+    {
+        id:20,
+        mots:["base", "camp", "fort"]
+    },
+    {
+        id:21,
+        mots:["beurre", "motte"]
+    },
+    {
         id:32,
         mots:["bus", "car"],
     },
