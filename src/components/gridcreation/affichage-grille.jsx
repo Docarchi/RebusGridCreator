@@ -13,7 +13,6 @@ export function AffichageGrille({sizeColumn, sizeLine, onChangeColumn, onChangeL
     }
 
     return <div>
-        <GrilleForm onChangeColumn={onChangeColumn} onChangeLine={onChangeLine}/>
         <div className={'fixed-grid has-'+nb_column+'-cols'}>
             <div className="grid" style={{width:(8*nb_column+0.75*(nb_column-1)).toString()+'rem', margin:"auto"}}>
                 {lines}
