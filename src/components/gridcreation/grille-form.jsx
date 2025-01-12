@@ -18,7 +18,7 @@ export function GrilleForm({onChangeColumn, onChangeLine}) {
 
 function GrilleSizeSelection({dropdown, onChange}){
     return <div className="control is-expanded">
-        <div className="select is-link is-fullwidth">
+        <div className="select is-fullwidth">
             <select onChange={(e) => onChange(e.target.value)} defaultValue={4} style={{textAlign:'center'}}>
                 {dropdown}
             </select>
