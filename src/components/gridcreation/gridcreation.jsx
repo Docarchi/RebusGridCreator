@@ -2,7 +2,7 @@ import { AffichageImage } from "./affichage-images"
 import { Recherche } from "./recherche"
 import { AffichageGrille } from "./affichage-grille"
 import { DndContext, DragOverlay } from "@dnd-kit/core"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ExportButton, GrilleDescription, GrilleObjectif, GrilleTitle } from "./grille-text"
 import { GrilleForm } from "./grille-form"
 
@@ -14,6 +14,17 @@ export function GridCreation() {
     const [sizeLine, setSizeLine] = useState(4)
 
     const [arrayImages, setArrayImages] = useState(initiateArray(sizeColumn, sizeLine))
+
+    useEffect(() => {
+        const newArray = []
+        for(let i = 0; i < sizeColumn; i++){
+            for(let j = 0; j < sizeLine; j++){
+                newArray.push(null)
+        }
+    }
+      setArrayImages(newArray)
+    }, [sizeColumn, sizeLine])
+    
 
    const [objectif2, setObjectif2] = useState(0)
    const [objectif3, setObjectif3] = useState(0)
@@ -56,7 +67,6 @@ export function GridCreation() {
 }
 
 function handleDragEnd(event, changeArray, currentArray) {
-    console.log("image id : "+event.active.id)
     if (event.collisions.length > 0){
         const newArray = []
         for (let i = 1; i <= currentArray.length; i++){
@@ -70,7 +80,6 @@ function handleDragEnd(event, changeArray, currentArray) {
         changeArray(newArray)
     }
 }
-
 
 function initiateArray(n_column, n_line){
     const lines = []

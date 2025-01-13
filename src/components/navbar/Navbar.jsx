@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import myicon from '/32.svg'
 
 export function Navbar() {
-    return <nav className="navbar" role="navigation" aria-label="main navigation">
+    return <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link className="navbar-item" to='/Home/'>
         <img src={myicon} width="80" height="160"/>
@@ -16,7 +16,10 @@ export function Navbar() {
       </div>
     
       <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-start">
+        <div className="navbar-start" style={{margin:'auto'}}>
+          <Link className="navbar-item" to='/Home/'>
+            Home
+          </Link>
           <Link className="navbar-item" to='/GridCreation/'>
             Créer une grille
           </Link>

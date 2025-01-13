@@ -6,7 +6,7 @@
 
 export function Recherche({onChange, inputSearch}) {
 
-    return <div className="field">
+    return <div className="field" style={{marginTop:'0.75rem'}}>
         <div className="control is-expanded">
             <input 
                 className="input is-link" 

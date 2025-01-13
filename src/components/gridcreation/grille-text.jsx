@@ -1,5 +1,5 @@
 export function GrilleTitle() {
-    return <div className="field">
+    return <div className="field" style={{marginTop:'0.75rem'}}>
         <label htmlFor="grilletitle" className="label">Titre de la grille</label>
         <div className="control">
             <input className="input" type="text" id="grilletitle" placeholder="Titre..."/>

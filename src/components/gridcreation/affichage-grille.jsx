@@ -11,7 +11,7 @@ export function AffichageGrille({sizeColumn, arrayImages}) {
 
     return <div>
         <div className={'fixed-grid has-'+nb_column+'-cols'}>
-            <div className="grid" style={{width:(8*nb_column+0.75*(nb_column-1)).toString()+'rem', margin:"auto"}}>
+            <div className="grid" style={{width:(8*nb_column+0.75*(nb_column-1)).toString()+'rem', margin:"auto", marginTop:'0.75rem'}}>
                 {lines}
             </div>
         </div>
