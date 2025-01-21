@@ -1,17 +1,17 @@
-export function GrilleTitle() {
+export function GrilleTitle({onChange}) {
     return <div className="field" style={{marginTop:'0.75rem'}}>
         <label htmlFor="grilletitle" className="label">Titre de la grille</label>
         <div className="control">
-            <input className="input" type="text" id="grilletitle" placeholder="Titre..."/>
+            <input className="input" type="text" id="grilletitle" placeholder="Titre..." onChange={(e)=>onChange(e.target.value)}/>
         </div>
   </div>
 }
 
-export function GrilleDescription(){
+export function GrilleDescription({onChange}){
     return <div className="field">
         <label htmlFor="grilledescription" className="label">Description de la grille</label>
         <div className="control">
-            <textarea className="textarea" id="grilledescription" placeholder="Description..."></textarea>
+            <textarea className="textarea" id="grilledescription" placeholder="Description..." onChange={(e)=>onChange(e.target.value)}></textarea>
         </div>
   </div>
 }
@@ -21,7 +21,7 @@ export function GrilleObjectif({objectives , setter}) {
     const objectivesItems = []
     for (let i = 0; i < objectives.length; i++) {
         objectivesItems.push(
-            <Objectif nombre={i+2} value={objectives[i]} onClick={setter[i]}/>
+            <Objectif nombre={i+2} value={objectives[i]} onClick={setter[i]} key={i+2}/>
         )
         
     }
@@ -67,9 +67,9 @@ function Objectif({nombre, value, onClick}) {
 </tr>
 }
 
-export function ExportButton() {
+export function ExportButton({onClick, data}) {
     return <div className="field">
-        <button className="button is-success is-fullwidth" style={{margin:'auto'}}>
+        <button className="button is-success is-fullwidth" style={{margin:'auto'}} onClick={() => onClick({data})}>
             Télécharger la grille
         </button>
     </div>   

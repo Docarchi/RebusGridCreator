@@ -6,7 +6,7 @@ export function AffichageGrille({sizeColumn, arrayImages}) {
 
     const lines = []
     for(let i = 0; i < arrayImages.length; i++){
-        lines.push(<CellDroppable i={i} imgId={arrayImages[i]}/>)
+        lines.push(<CellDroppable i={i} imgId={arrayImages[i]} key={i}/>)
         }
 
     return <div>
@@ -31,7 +31,7 @@ function CellDroppable({i, imgId}) {
     }
 
     const contenu = imgId !== null ? <figure className="image is-128x128">
-    <img src={'/RebusGridCreator/images/'+imgId+'.png'} alt='image 1'/>
+    <img src={'/RebusGridCreator/images/'+imgId+'.jpg'} alt='image 1'/>
 </figure>:<div style={{marginTop:'20%'}}>Case {id}<br/>Ajouter une image</div>
 
     return <div className="cell" key={id} style={style} ref={setNodeRef}>

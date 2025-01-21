@@ -5,10 +5,13 @@ import { DndContext, DragOverlay } from "@dnd-kit/core"
 import { useState, useEffect } from "react"
 import { ExportButton, GrilleDescription, GrilleObjectif, GrilleTitle } from "./grille-text"
 import { GrilleForm } from "./grille-form"
+import { ExportPDF } from "./export-pdf"
 
 export function GridCreation() {
 
     const [inputSearch, setInputSearch] = useState('')
+    const [inputTitle, setInputTitle] = useState('undefined')
+    const [inputDescription, setInputDescription] = useState('undefined')
 
     const [sizeColumn, setSizeColumn] = useState(4)
     const [sizeLine, setSizeLine] = useState(4)
@@ -48,17 +51,17 @@ export function GridCreation() {
                 <AffichageGrille sizeColumn={sizeColumn} arrayImages={arrayImages}/>
             </div>
             <div className="column is-one-quarter">
-                <GrilleTitle/>
-                <GrilleDescription/>
+                <GrilleTitle onChange={setInputTitle}/>
+                <GrilleDescription onChange={setInputDescription}/>
                 <GrilleForm onChangeColumn={setSizeColumn} onChangeLine={setSizeLine}/>
                 <GrilleObjectif objectives={objectives} setter={objectivesSetter}/>
-                <ExportButton/>
+                <ExportButton onClick={ExportPDF} data={{title:inputTitle, description:inputDescription, array:arrayImages, nbCol:sizeColumn, objectives:[objectif2, objectif3, objectif4, objectif5, objectif6]}}/>
             </div>
     </div>
 
     <DragOverlay>
         {activeId ? (<figure className="image is-128x128">
-        <img src={'/RebusGridCreator/images/'+activeId+'.png'} alt='image 1'/>
+        <img src={'/RebusGridCreator/images/'+activeId+'.jpg'} alt='image 1'/>
     </figure>): null}
     </DragOverlay>
 
