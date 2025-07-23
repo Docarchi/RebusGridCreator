@@ -8,7 +8,7 @@ export function HomePage() {
             <p className="title">Bienvenue sur Rébus</p>
             <p className="subtitle">Créez dès maintenant vos propres grilles !</p>
             <Link to={'/GridCreation/'}>
-            <button className="button is-link">Créer une grille</button>
+            <button className="button is-primary">Créer une grille</button>
             </Link>
         </div>
     </section>

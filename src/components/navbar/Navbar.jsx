@@ -18,7 +18,7 @@ export function Navbar() {
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-start" style={{margin:'auto'}}>
           <Link className="navbar-item" to='/Home/'>
-            Home
+            Accueil
           </Link>
           <Link className="navbar-item" to='/GridCreation/'>
             Créer une grille

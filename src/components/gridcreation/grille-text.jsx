@@ -69,8 +69,16 @@ function Objectif({nombre, value, onClick}) {
 
 export function ExportButton({onClick, data}) {
     return <div className="field">
-        <button className="button is-success is-fullwidth" style={{margin:'auto'}} onClick={() => onClick({data})}>
+        <button className="button is-primary is-fullwidth" style={{margin:'auto'}} onClick={() => onClick({data})}>
             Télécharger la grille
+        </button>
+    </div>   
+}
+
+export function ResetButton({onClick, data}) {
+    return <div className="field">
+        <button className="button is-danger is-fullwidth" style={{margin:'auto'}} onClick={() => onClick(data)}>
+            Réinitialiser la grille
         </button>
     </div>   
 }

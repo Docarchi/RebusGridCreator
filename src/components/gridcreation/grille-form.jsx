@@ -7,7 +7,7 @@ export function GrilleForm({onChangeColumn, onChangeLine}) {
     const line_array = []
 
     for(let i=1; i<column_max+1;i++){column_array.push(<option key={i} value={i}>nombre de colonnes : {i}</option>)}
-    for(let i=1; i<line_max+1;i++){line_array.push(<option key={i} value={i}>nombre de lignes {i}</option>)}
+    for(let i=1; i<line_max+1;i++){line_array.push(<option key={i} value={i}>nombre de lignes : {i}</option>)}
 
     return <div className="field">
             <GrilleSizeSelection dropdown={column_array} onChange={onChangeColumn}></GrilleSizeSelection>
