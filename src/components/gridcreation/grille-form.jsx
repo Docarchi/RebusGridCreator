@@ -1,4 +1,4 @@
-export function GrilleForm({onChangeColumn, onChangeLine}) {
+export function GrilleForm({onChangeColumn, onChangeLine, initColumn, initLine}) {
 
     const column_max = 6
     const line_max = 6
@@ -10,16 +10,16 @@ export function GrilleForm({onChangeColumn, onChangeLine}) {
     for(let i=1; i<line_max+1;i++){line_array.push(<option key={i} value={i}>nombre de lignes : {i}</option>)}
 
     return <div className="field">
-            <GrilleSizeSelection dropdown={column_array} onChange={onChangeColumn}></GrilleSizeSelection>
-            <GrilleSizeSelection dropdown={line_array} onChange={onChangeLine}></GrilleSizeSelection>
+            <GrilleSizeSelection dropdown={column_array} onChange={onChangeColumn} initSize={initColumn}></GrilleSizeSelection>
+            <GrilleSizeSelection dropdown={line_array} onChange={onChangeLine} initSize={initLine}></GrilleSizeSelection>
     </div>
     
 }
 
-function GrilleSizeSelection({dropdown, onChange}){
+function GrilleSizeSelection({dropdown, onChange, initSize}){
     return <div className="control is-expanded">
         <div className="select is-fullwidth">
-            <select onChange={(e) => onChange(e.target.value)} defaultValue={4} style={{textAlign:'center'}}>
+            <select onChange={(e) => onChange(e.target.value)} defaultValue={initSize} style={{textAlign:'center'}}>
                 {dropdown}
             </select>
         </div>

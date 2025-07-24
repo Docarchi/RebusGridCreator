@@ -1,17 +1,17 @@
-export function GrilleTitle({onChange}) {
+export function GrilleTitle({onChange, initText}) {
     return <div className="field" style={{marginTop:'0.75rem'}}>
         <label htmlFor="grilletitle" className="label">Titre de la grille</label>
         <div className="control">
-            <input className="input" type="text" id="grilletitle" placeholder="Titre..." onChange={(e)=>onChange(e.target.value)}/>
+            <input className="input" defaultValue={initText != 'undefined'? initText:""} type="text" id="grilletitle" placeholder="Titre..." onChange={(e)=>onChange(e.target.value)}/>
         </div>
   </div>
 }
 
-export function GrilleDescription({onChange}){
+export function GrilleDescription({onChange, initText}){
     return <div className="field">
         <label htmlFor="grilledescription" className="label">Description de la grille</label>
         <div className="control">
-            <textarea className="textarea" id="grilledescription" placeholder="Description..." onChange={(e)=>onChange(e.target.value)}></textarea>
+            <textarea className="textarea" id="grilledescription" defaultValue={initText != 'undefined'? initText:""} placeholder="Description..." onChange={(e)=>onChange(e.target.value)}></textarea>
         </div>
   </div>
 }

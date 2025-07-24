@@ -6,28 +6,36 @@ import { useState, useEffect } from "react"
 import { ExportButton, GrilleDescription, GrilleObjectif, GrilleTitle, ResetButton } from "./grille-text"
 import { GrilleForm } from "./grille-form"
 import { ExportPDF } from "./export-pdf"
+import {useCookies} from 'react-cookie'
 
 export function GridCreation() {
 
+    const [cookies, setCookie, removeCookie] = useCookies(['title'])
+
     const [inputSearch, setInputSearch] = useState('')
-    const [inputTitle, setInputTitle] = useState('undefined')
-    const [inputDescription, setInputDescription] = useState('undefined')
+    const [inputTitle, setInputTitle] = useState((cookies.title ? cookies.title:'undefined'))
+    const [inputDescription, setInputDescription] = useState((cookies.description ? cookies.description:'undefined'))
 
-    const [sizeColumn, setSizeColumn] = useState(4)
-    const [sizeLine, setSizeLine] = useState(4)
+    const [sizeColumn, setSizeColumn] = useState((cookies.sizeColumn ? cookies.sizeColumn:4))
+    const [sizeLine, setSizeLine] = useState((cookies.sizeLine ? cookies.sizeLine:4))
 
-    const [arrayImages, setArrayImages] = useState(initiateArray(sizeColumn, sizeLine))
+    const [arrayImages, setArrayImages] = useState(cookies.arrayImages ? cookies.arrayImages: initiateArray(sizeColumn, sizeLine))
 
     useEffect(() => {
         const newArray = []
         for(let i = 0; i < sizeColumn; i++){
             for(let j = 0; j < sizeLine; j++){
                 newArray.push(null)
+            }
         }
-    }
-      setArrayImages(newArray)
+        setArrayImages(newArray)
     }, [sizeColumn, sizeLine])
     
+    useEffect(() => {setCookie('title', inputTitle, {path: '/'})}, [inputTitle])
+    useEffect(() => {setCookie('description', inputDescription, {path: '/'})}, [inputDescription])
+    useEffect(() => {setCookie('sizeColumn', sizeColumn, {path: '/'})}, [sizeColumn])
+    useEffect(() => {setCookie('sizeLine', sizeLine, {path: '/'})}, [sizeLine])
+    useEffect(() => {setCookie('arrayImages', arrayImages, {path: '/'})}, [arrayImages])
 
    const [objectif2, setObjectif2] = useState(0)
    const [objectif3, setObjectif3] = useState(0)
@@ -51,9 +59,9 @@ export function GridCreation() {
                 <AffichageGrille sizeColumn={sizeColumn} arrayImages={arrayImages}/>
             </div>
             <div className="column is-one-quarter">
-                <GrilleTitle onChange={setInputTitle}/>
-                <GrilleDescription onChange={setInputDescription}/>
-                <GrilleForm onChangeColumn={setSizeColumn} onChangeLine={setSizeLine}/>
+                <GrilleTitle onChange={setInputTitle} initText={inputTitle}/>
+                <GrilleDescription onChange={setInputDescription} initText={inputDescription}/>
+                <GrilleForm onChangeColumn={setSizeColumn} onChangeLine={setSizeLine} initColumn={sizeColumn} initLine={sizeLine}/>
                 <GrilleObjectif objectives={objectives} setter={objectivesSetter}/>
                 <ExportButton onClick={ExportPDF} data={{title:inputTitle, description:inputDescription, array:arrayImages, nbCol:sizeColumn, objectives:[objectif2, objectif3, objectif4, objectif5, objectif6]}}/>
                 <ResetButton onClick={setArrayImages} data={() => initiateArray(sizeColumn, sizeLine)}/>
