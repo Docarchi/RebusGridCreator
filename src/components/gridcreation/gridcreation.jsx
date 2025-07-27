@@ -25,7 +25,11 @@ export function GridCreation() {
         const newArray = []
         for(let i = 0; i < sizeColumn; i++){
             for(let j = 0; j < sizeLine; j++){
-                newArray.push(null)
+                if (arrayImages.length > i*sizeLine+j) {
+                    newArray.push(arrayImages[i*sizeLine+j])
+                }else{
+                    newArray.push(null)
+                }
             }
         }
         setArrayImages(newArray)
