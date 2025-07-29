@@ -70,13 +70,13 @@ export function GridCreation() {
                 <ExportButton onClick={ExportPDF} data={{title:inputTitle, description:inputDescription, array:arrayImages, nbCol:sizeColumn, objectives:[objectif2, objectif3, objectif4, objectif5, objectif6]}}/>
                 <ResetButton onClick={setArrayImages} data={() => initiateArray(sizeColumn, sizeLine)}/>
             </div>
-    </div>
+        </div>
 
-    <DragOverlay>
-        {activeId ? (<figure className="image is-128x128">
-        <img src={'/RebusGridCreator/images/'+activeId+'.jpg'} alt='image 1'/>
-    </figure>): null}
-    </DragOverlay>
+        <DragOverlay dropAnimation={null}>
+            {activeId ? (<figure className="image is-128x128">
+            <img src={'/RebusGridCreator/images/'+activeId+'.jpg'} alt='image 1'/>
+        </figure>): null}
+        </DragOverlay>
 
     </DndContext>
     
