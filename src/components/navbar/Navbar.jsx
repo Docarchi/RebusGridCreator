@@ -23,10 +23,9 @@ export function Navbar() {
           <Link className="navbar-item" to='/GridCreation/'>
             Créer une grille
           </Link>
-    
-          <a className="navbar-item">
+          <Link className="navbar-item" to='/About/'>
             À propos
-          </a>
+          </Link>
         </div>
     
       </div>

@@ -25,6 +25,6 @@ function ImageDraggable({image}) {
     const style = transform ? {transform: 'translate3d(${transform.x}px, ${transform.y}px, 0)',} : undefined
 
     return <figure className="image is-128x128" ref={setNodeRef} {...listeners} {...attributes}>
-        <img src={'/RebusGridCreator/images/'+image.id+'.jpg'} alt='image 1'/>
+        <img src={'/RebusGridCreator/images/'+image.id+'.jpg'} alt='image 1' title={image.mots}/>
     </figure>
 }
